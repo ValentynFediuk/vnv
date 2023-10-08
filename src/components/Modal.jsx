@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import {Title} from "./ui/Title";
+import { Title } from "./ui/Title";
 
-export const Modal = ({setModalOpen, modalOpen}) => {
-
+export const Modal = ({ setModalOpen, modalOpen }) => {
     const backdropVariants = {
         visible: { opacity: 1 },
         hidden: { opacity: 0 },
@@ -29,7 +28,7 @@ export const Modal = ({setModalOpen, modalOpen}) => {
             <AnimatePresence>
                 {modalOpen && (
                     <motion.div
-                        className='fixed z-[999999] left-0 right-0 top-0 bottom-0'
+                        className='fixed z-[999999] left-0 right-0 bg-black top-0 bottom-0 overflow-y-auto'
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
@@ -46,7 +45,7 @@ export const Modal = ({setModalOpen, modalOpen}) => {
                             <div onClick={() => setModalOpen(false)} className='cursor-pointer absolute right-10 top-10 uppercase text-2xl text-right'>X</div>
                             <Title className='mb-12 text-lg hidden sm:block'>Special Offer</Title>
                             <p className='text-center text-lg sm:text-3xl pt-10 sm:pt-0 mb-4'>
-                                Leave your phone number and you'll get free consultation
+                                Leave your phone number, and you'll get a free consultation
                             </p>
                             <form className='text-sm sm:text-xl flex flex-col gap-4 max-w-3xl mx-auto'>
                                 <input
